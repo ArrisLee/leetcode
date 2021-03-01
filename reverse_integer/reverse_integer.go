@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func reverse(x int) int {
+func reverseIntSltnOne(x int) int {
 	orig := strconv.Itoa(x)
 	numStr := ""
 	end := 0
@@ -21,4 +21,14 @@ func reverse(x int) int {
 	} else {
 		return result
 	}
+}
+
+func reverseIntSltnTwo(x int) int {
+	reversed := 0
+	for x != 0 {
+		reversed *= 10
+		reversed += x % 10
+		x /= 10
+	}
+	return reversed
 }
