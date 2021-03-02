@@ -49,10 +49,7 @@ func isValid(in string) bool {
 		}
 
 	}
-	if !stk.isEmpty() {
-		return false
-	}
-	return true
+	return stk.isEmpty()
 }
 
 // short version
