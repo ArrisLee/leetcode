@@ -7,6 +7,7 @@ func TestIsValid(t *testing.T) {
 		"{[]()}": true,
 		"{}[]()": true,
 		"{[}":    false,
+		"{)":     false,
 		")":      false,
 		"(":      false,
 		"":       true,
