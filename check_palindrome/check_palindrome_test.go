@@ -8,6 +8,7 @@ func TestIsPalindrome(t *testing.T) {
 		6:     true,
 		1001:  true,
 		99999: true,
+		10:    false,
 		1101:  false,
 		8686:  false,
 		-1111: false,
