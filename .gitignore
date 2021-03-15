@@ -1,2 +1,3 @@
-*.sh
+fcommit.sh
 .DS_Store
+*.json
