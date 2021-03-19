@@ -1,25 +1,26 @@
 package generatetinyurl
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
 
-type Codec struct {
+type codec struct {
 	urls []string
 }
 
-func Constructor() Codec {
-	return Codec{[]string{}}
+func constructor() codec {
+	return codec{[]string{}}
 }
 
-func (this *Codec) encode(longUrl string) string {
-	this.urls = append(this.urls, longUrl)
-	return "http://tinyurl.com/" + string(len(this.urls)-1)
+func (c *codec) encode(longURL string) string {
+	c.urls = append(c.urls, longURL)
+	return "http://tinyurl.com/" + fmt.Sprintf("%d", len(c.urls)-1)
 }
 
-func (this *Codec) decode(shortUrl string) string {
-	tmp := strings.Split(shortUrl, "/")
+func (c *codec) decode(shortURL string) string {
+	tmp := strings.Split(shortURL, "/")
 	i, _ := strconv.Atoi(tmp[len(tmp)-1])
-	return this.urls[i]
+	return c.urls[i]
 }
