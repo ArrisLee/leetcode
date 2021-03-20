@@ -10,3 +10,4 @@
 - check ones segement
 - find same numbers
 - check palindrome number
+- generate short URL
