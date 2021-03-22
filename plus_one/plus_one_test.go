@@ -1,16 +1,15 @@
 package plusone
 
 import (
+	"reflect"
 	"testing"
 )
 
 func TestPlusOne(t *testing.T) {
 	in := []int{9, 9, 9, 9, 9, 9}
 	expect := []int{1, 0, 0, 0, 0, 0, 0}
-	out := plusOne(in)
-	for i := range out {
-		if out[i] != expect[i] {
-			t.Error("failed")
-		}
+	got := plusOne(in)
+	if !reflect.DeepEqual(expect, got) {
+		t.Errorf("want %v, got: %v", expect, got)
 	}
 }
